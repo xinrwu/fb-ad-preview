@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fb_mobile_ad_preview',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
