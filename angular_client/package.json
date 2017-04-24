@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "fb-ad-preview",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "Facebook ad preview using AngularJS",
+  "repository": "https://github.com/xinrwu/fb-ad-preview",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",

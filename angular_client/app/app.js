@@ -3,12 +3,12 @@
 // Declare app level module which depends on views, and components
 angular.module('previewApp', [
   'ngRoute',
-  'previewApp.view1',
-  'previewApp.view2',
+  'previewApp.preview_form',
+  'previewApp.preview_list',
   'previewApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/preview_form'});
 }]);

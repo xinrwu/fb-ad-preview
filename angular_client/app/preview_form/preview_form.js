@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('previewApp.view1', ['ngRoute'])
+angular.module('previewApp.preview_form', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
+  $routeProvider.when('/preview_form', {
+    templateUrl: 'preview_form/preview_form.html',
     controller: 'PreviewFormController'
   });
 }])
