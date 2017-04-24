@@ -9,6 +9,11 @@ angular.module('previewApp.preview_form', ['ngRoute'])
   });
 }])
 
-.controller('PreviewFormController', [function() {
-  
+.controller('PreviewFormController', ['$scope', function($scope) {
+  $scope.addPreview = function() {
+    // add ninja to API
+
+
+    // reload list
+  }
 }]);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('previewApp.preview_list', ['ngRoute'])
+angular.module('previewApp.preview_list', ['ngRoute', 'ngResource'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/preview_list', {
@@ -9,6 +9,7 @@ angular.module('previewApp.preview_list', ['ngRoute'])
   });
 }])
 
-.controller('PreviewListController', [function() {
-
+.controller('PreviewListController', ['$scope', 'PreviewList', function($scope, PreviewList) {
+    var data = PreviewList.query();
+    $scope.previews = data;
 }]);
