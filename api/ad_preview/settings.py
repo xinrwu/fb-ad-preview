@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fb_mobile_ad_preview',
+    'fb_mobile_ad_preview.apps.FbMobileAdPreviewConfig',
     'rest_framework',
 ]
 
