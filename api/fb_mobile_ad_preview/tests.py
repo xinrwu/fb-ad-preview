@@ -7,6 +7,11 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 
 class PreviewInfoTests(APITestCase):
+    def test_get_empty(self):
+        """ Test returns empty list when no data is inserted. """
+        response = self.client.get('/previews/')
+        self.assertEqual([], response.data)
+
     def test_create_preview(self):
         """ Test we can create a new preview. """
         data = {'business_name': 'Bell',
@@ -32,7 +37,7 @@ class PreviewInfoTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(PreviewInfo.objects.count(), 0)
 
-    def test_empty(self):
+    def test_empty_field(self):
         """ Test allow empty field. """
         data = {'business_name': 'Bell',
                 'text': 'Looking for a new internet provider?',
