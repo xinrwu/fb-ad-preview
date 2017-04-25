@@ -15,19 +15,19 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
+  <!--<ul class="menu">
     <li><a href="#!/preview_form">preview form</a></li>
     <li><a href="#!/preview_list">preview list</a></li>
-  </ul>
+  </ul>-->
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <preview/>
   <div ng-view></div>
-
   <div>Angular seed app: v<span app-version></span></div>
-
+  
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -35,12 +35,12 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="app.js"></script>
-  <script src="preview_form/preview_form.js"></script>
-  <script src="preview_form/preview_form.service.js"></script>
-  <script src="preview_list/preview_list.js"></script>
-  <script src="preview_list/preview_list.service.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+  <script src="components/preview/preview.js"></script>
+  <script src="components/preview/preview.service.js"></script>
+  <script src="components/preview/list/list.js"></script>
+  <script src="components/preview/create/create.js"></script>
 </body>
 </html>

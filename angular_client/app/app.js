@@ -4,12 +4,11 @@
 angular.module('previewApp', [
   'ngRoute',
   'ngResource',
-  'previewApp.preview_form',
-  'previewApp.preview_list',
+  'preview',
   'previewApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+  //$locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/preview_form'});
+  //$routeProvider.otherwise({redirectTo: '/preview_form'});
 }]);

@@ -1,0 +1,29 @@
+<div>
+    <form ng-submit="addPreview()" method="post">
+        <fieldset>
+            <legend>Make New Preview</legend>
+            <div>
+                Business Name: <input type="text" ng-model="new_preview.business_name">
+            </div>
+            <div>
+                Text: <input type="text" ng-model="new_preview.text">
+            </div>
+            <div>
+                Image: <input type="text" ng-model="new_preview.image" />
+            </div>
+            <div>
+                Description: <input type="text" ng-model="new_preview.description" />
+            </div>
+            <div>
+                url: <input type="text" ng-model="new_preview.url" />
+            </div>
+            <div>
+                Call to Action: <input type="text" ng-model="new_preview.call_to_action" />
+            </div>
+            <div>
+                <input type="submit" value="save" />
+                <button type="button">preview</button>
+            </div>
+        </fieldset>
+    </form>
+</div>

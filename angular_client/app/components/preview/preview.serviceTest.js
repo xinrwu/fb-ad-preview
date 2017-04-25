@@ -1,8 +1,8 @@
 'use strict';
 
-describe('PreviewList', function () {
+describe('PreviewClient', function () {
   var $httpBackend;
-  var PreviewList;
+  var PreviewClient;
   var previewData = [{
       'business_name': 'Bell',
       'text': 'Looking for a new internet provider?',
@@ -25,13 +25,13 @@ describe('PreviewList', function () {
     jasmine.addCustomEqualityTester(angular.equals);
   });
 
-  beforeEach(module('previewApp.preview_list'));
+  beforeEach(module('preview'));
 
   // mocking the api
-  beforeEach(inject(function (_$httpBackend_, _PreviewList_) {
+  beforeEach(inject(function (_$httpBackend_, _PreviewClient_) {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('http://127.0.0.1:8000/previews').respond(previewData);
-    PreviewList = _PreviewList_;
+    PreviewClient = _PreviewClient_;
   }));
 
   afterEach(function () {
@@ -40,7 +40,7 @@ describe('PreviewList', function () {
   });
 
   it('should fetch previews data from `http://127.0.0.1:8000/previews`', function () {
-    var previewList = PreviewList.query();
+    var previewList = PreviewClient.query();
     expect(previewList).toEqual([]);
     $httpBackend.flush();
     expect(previewList).toEqual(previewData);
