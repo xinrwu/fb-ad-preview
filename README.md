@@ -1,8 +1,7 @@
-# fb-ad-preview
+# server side
 
 ## Installing dependencies for api
 pip install -r requirements.txt
-
 
 ## setting up database
 1. python manage.py makemigrations fb_mobile_ad_preview
@@ -15,3 +14,13 @@ pip install -r requirements.txt
 ## Running tests on api
 python manage.py test
 
+# client side
+
+## Installing dependencies
+npm install
+
+## Running the server
+npm start
+
+## Running tests
+npm test
