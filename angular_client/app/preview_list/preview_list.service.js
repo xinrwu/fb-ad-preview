@@ -1,5 +1,5 @@
 'use strict';
-
+// sends GET to get list of previews
 angular
     .module('previewApp.preview_list')
     .factory('PreviewList', ['$resource',

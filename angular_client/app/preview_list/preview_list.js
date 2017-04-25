@@ -10,6 +10,7 @@ angular.module('previewApp.preview_list', ['ngRoute', 'ngResource'])
 }])
 
 .controller('PreviewListController', ['$scope', 'PreviewList', function($scope, PreviewList) {
+    // getting previews
     var data = PreviewList.query();
     $scope.previews = data;
 }]);
