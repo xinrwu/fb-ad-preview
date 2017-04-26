@@ -1,4 +1,11 @@
-<div ng-controller="PreviewController">
-    <preview-list/>
+<div class="list" ng-controller="PreviewController as pctrl">
+    <div class="display">
+        <preview-display/>
+    </div>
+    <div>
+        <preview-list/>
+    </div>
+    <div class="form">
+        <preview-form/>
+    </div>
 </div>
-<preview-form/>

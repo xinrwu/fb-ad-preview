@@ -7,7 +7,7 @@ angular.module('preview.create', ['ngResource'])
     controller: 'PreviewFormController'
   })
 
-  .controller('PreviewFormController', ['$route', '$scope', 'PreviewClient', function ($route, $scope, PreviewClient) {
+  .controller('PreviewFormController', ['$rootScope', '$scope', 'PreviewClient', function ($rootScope, $scope, PreviewClient) {
     $scope.addPreview = function () {
       // add preview to API
       PreviewClient.save($scope.new_preview, function (data) {
@@ -16,4 +16,9 @@ angular.module('preview.create', ['ngResource'])
         alert('contains an invalid parameter');
       });
     }
+    // get saved preview displayed
+    $scope.onDisplay = function(preview) {
+        $rootScope.displayPreview(preview);
+    }
+
   }]);
