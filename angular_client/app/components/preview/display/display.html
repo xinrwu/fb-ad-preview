@@ -1,17 +1,21 @@
 <div ng-controller="PreviewDisplayController" ng-init="show=false" ng-show="show">
-    hello!
-    <dl>
-        <dt>Business Name</dt>
-        <dd>{{preview.business_name}}</dd>
-        <dt>Text</dt>
-        <dd>{{preview.text}}</dd>
-        <dt>Description</dt>
-        <dd>{{preview.description}}</dd>
-        <dt>Image</dt>
-        <dd>{{preview.image}}</dd>
-        <dt>URL</dt>
-        <dd>{{preview.url}}</dd>
-        <dt>Call to Action</dt>
-        <dd>{{preview.call_to_action}}</dd>
-    </dl>
+    <div class="fbPreview">
+        <div class="ad">
+            <div class="name">{{preview.business_name}}</div>
+            <div class="text">{{preview.text}}</div>
+            <div class="adSite">
+                <div class="image"><img src={{preview.image}}></div>
+                <div class="adInfo">
+                    <div class="info">
+                    <div class="description">{{preview.description}}</div>
+                    <div class="message">{{preview.message}}</div>
+                    <div class="url">{{preview.url}}</div>
+                    </div>
+                    <div class="callToAction">
+                        <button><span>{{preview.call_to_action}}</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

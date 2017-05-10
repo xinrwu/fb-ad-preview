@@ -5,4 +5,4 @@ class PreviewInfoSerializer(serializers.ModelSerializer):
     """ Serializer to represent PreviewInfo model """
     class Meta:
         model = PreviewInfo
-        fields = ('business_name', 'text', 'image', 'description', 'url', 'call_to_action')
+        fields = ('business_name', 'text', 'image', 'description', 'url', 'call_to_action', 'message')

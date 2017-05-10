@@ -11,7 +11,10 @@ app.component('previewList', {
 });
 app.controller('PreviewListController', ['$rootScope', '$scope', 'PreviewClient', function ($rootScope, $scope, PreviewClient) {
     // getting previews
-    $scope.previews = PreviewClient.query();
+    $scope.getPreviews = function() {
+        var previews = PreviewClient.query();
+        $scope.previews = previews
+    }
     // get saved preview displayed
     $scope.onDisplay = function(preview) {
         $rootScope.displayPreview(preview);

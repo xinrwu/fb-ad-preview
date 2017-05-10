@@ -124,5 +124,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:8001'
+    'localhost:8001',
+    '127.0.0.1:8001'
 )

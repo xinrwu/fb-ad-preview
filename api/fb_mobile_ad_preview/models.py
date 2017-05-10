@@ -13,3 +13,4 @@ class PreviewInfo(models.Model):
     description = models.TextField()
     url = models.CharField(max_length=100)
     call_to_action = models.CharField(blank=True, max_length=20, null=True)
+    message = models.TextField(null=True)

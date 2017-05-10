@@ -3,6 +3,7 @@
 describe('PreviewClient', function () {
   var $httpBackend;
   var PreviewClient;
+  var requestHandler;
   var previewData = [{
       'business_name': 'Bell',
       'text': 'Looking for a new internet provider?',
@@ -30,7 +31,9 @@ describe('PreviewClient', function () {
   // mocking the api
   beforeEach(inject(function (_$httpBackend_, _PreviewClient_) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('http://127.0.0.1:8000/previews').respond(previewData);
+    requestHandler = $httpBackend.when('GET', 'http://127.0.0.1:8000/previews').respond(previewData);
+    //requestHandler = $httpBackend.when('POST', 'http://127.0.0.1:8000/previews')
+    //$httpBackend.expectPOST('http://127.0.0.1:8000/previews', '{}').respond(401, '');
     PreviewClient = _PreviewClient_;
   }));
 
@@ -45,4 +48,11 @@ describe('PreviewClient', function () {
     $httpBackend.flush();
     expect(previewList).toEqual(previewData);
   });
+/*
+  it('should fail POST', function() {
+    var saved = PreviewClient.save({});
+    $httpBackend.flush();
+    expect(saved.status).toBe('401');
+  })
+*/
 });

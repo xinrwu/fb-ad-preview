@@ -1,4 +1,4 @@
-<div ng-controller="PreviewListController">
+<div ng-controller="PreviewListController" ng-init="getPreviews()">
   <h3>Saved Previews</h3>
   <div ng-repeat="preview in previews">
     <dl>
@@ -14,6 +14,8 @@
       <dd>{{preview.url}}</dd>
       <dt>Call to Action</dt>
       <dd>{{preview.call_to_action}}</dd>
+      <dt>Message</dt>
+      <dd>{{preview.message}}</dd>
     </dl>
     <button ng-click="onDisplay(preview)" type="button">preview</button>
   </div>

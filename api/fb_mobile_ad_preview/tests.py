@@ -19,7 +19,8 @@ class PreviewInfoTests(APITestCase):
                 'image': '001.jpg',
                 'description': 'Fastest internet provider!',
                 'url': 'https://www.bell.ca',
-                'call_to_action': 'try here!'}
+                'call_to_action': 'try here!',
+                'message': 'this is a message'}
         response = self.client.post('/previews/', data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(PreviewInfo.objects.count(), 1)
@@ -32,7 +33,8 @@ class PreviewInfoTests(APITestCase):
                 'image': '001.jpg',
                 'description': 'Fastest internet provider!',
                 'url': 'https://www.bell.ca',
-                'call_to_action': 'try hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!'}
+                'call_to_action': 'try hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!',
+                'message': 'this is a message'}
         response = self.client.post('/previews/', data, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(PreviewInfo.objects.count(), 0)
@@ -44,7 +46,8 @@ class PreviewInfoTests(APITestCase):
                 'image': '001.jpg',
                 'description': 'Fastest internet provider!',
                 'url': 'https://www.bell.ca',
-                'call_to_action': ''}
+                'call_to_action': '',
+                'message': 'this is a message'}
         response = self.client.post('/previews/', data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(PreviewInfo.objects.count(), 1)
@@ -57,14 +60,16 @@ class PreviewInfoTests(APITestCase):
                  'image': '001.jpg',
                  'description': 'Fastest internet provider!',
                  'url': 'https://www.bell.ca',
-                 'call_to_action': 'try here!'}
+                 'call_to_action': 'try here!',
+                 'message': 'this is a message'}
         self.client.post('/previews/', data1, format='json')
         data2 = {'business_name': 'Bell2',
                  'text': 'Looking for a new internet provider?',
                  'image': '001.jpg',
                  'description': 'Fastest internet provider!',
                  'url': 'https://www.bell.ca',
-                 'call_to_action': 'try here!'}
+                 'call_to_action': 'try here!',
+                 'message': 'this is a message'}
         self.client.post('/previews/', data2, format='json')
         response = self.client.get('/previews/')
         self.assertEqual([data1, data2], response.data)

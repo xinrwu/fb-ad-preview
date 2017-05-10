@@ -20,5 +20,4 @@ angular.module('preview.create', ['ngResource'])
     $scope.onDisplay = function(preview) {
         $rootScope.displayPreview(preview);
     }
-
   }]);
